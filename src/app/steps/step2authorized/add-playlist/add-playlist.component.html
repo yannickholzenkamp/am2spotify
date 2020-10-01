@@ -1,0 +1,23 @@
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      {{playlist.name}}
+    </p>
+    <a href="#" class="card-header-icon" aria-label="more options">
+      <span class="icon">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </a>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      <ul>
+        <li *ngFor="let uri of uris">{{uri.explanation}}</li>
+      </ul>
+    </div>
+  </div>
+  <footer class="card-footer">
+    <a class="card-footer-item" (click)="loadTitles()">Load Titles</a>
+    <a class="card-footer-item" (click)="push()">Push</a>
+  </footer>
+</div>

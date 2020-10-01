@@ -1,0 +1,30 @@
+<p *ngIf="isLoading">Loading</p>
+<div *ngIf="!isLoading">
+  <p>Is Authorized</p>
+  <p>Token: {{token}}</p>
+  <p>User-ID: {{user}}</p>
+</div>
+
+<div class="upload">
+  <div>
+    <label>Select File: </label>
+    <input type='file' (change)="selectFile($event)">
+  </div>
+  <div>
+    <label>Playlist Regex: </label>
+    <input type='text' (change)="setRegex($event)">
+  </div>
+
+  <div>
+    <button class="button" (click)="parseFile()">Parse</button>
+  </div>
+</div>
+
+<div class="result">
+  <app-add-playlist *ngFor="let playlist of playlists"
+                    class="playlist-item"
+                    [playlist]="playlist"
+                    [availableTracks]="tracks"></app-add-playlist>
+</div>
+
+

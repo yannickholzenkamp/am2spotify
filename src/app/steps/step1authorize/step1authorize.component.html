@@ -1,0 +1,16 @@
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <label class="label">Client-ID</label>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <p class="control">
+        <input class="input" type="text" (change)="changeClientId($event)">
+      </p>
+    </div>
+  </div>
+</div>
+<div class="button-container">
+  <a [href]="authorizeUrl" class="button">Authorize</a>
+</div>
+
